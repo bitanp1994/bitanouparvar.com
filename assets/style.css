@@ -368,3 +368,10 @@ main .eyebrow, main .section-title, main .label, main .text-links, main .post-ta
 .tile-bars i { flex: 1; background: var(--bg); opacity: .85; }
 @media (max-width: 640px) { .report-anatomy { grid-template-columns: 1fr; } }
 .pair { justify-content: space-evenly; gap: 0; } .pair b { height: 14px; } .pair b.now { margin-bottom: 0; }
+
+/* Limu phone screenshots */
+.phone-shots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 28px; }
+.phone-shots figure { margin: 0; }
+.phone-shots img { width: 100%; border: 1px solid var(--line); border-radius: 14px; display: block; }
+.phone-shots figcaption { font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-top: 8px; }
+@media (max-width: 640px) { .phone-shots { grid-template-columns: 1fr 1fr; } }
