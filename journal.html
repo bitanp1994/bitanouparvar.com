@@ -3,9 +3,8 @@ layout: default
 title: Journal
 ---
 <article class="page journal">
-  <p class="section-title journal-label" id="journal-label">Latest entries</p>
-
   {% if site.posts.size > 0 %}
+  <p class="section-title journal-label" id="journal-label">Latest entries</p>
     {% include post-list.html posts=site.posts %}
   {% else %}
     <p class="muted">First entry coming soon.</p>
@@ -16,6 +15,7 @@ title: Journal
 (function () {
   // Opening /journal/#tagname (from a hashtag on an entry) shows only entries with that tag.
   var label = document.getElementById('journal-label');
+  if (!label) return;
   var items = document.querySelectorAll('.post-list li');
   function apply() {
     var tag = decodeURIComponent(location.hash.slice(1));
