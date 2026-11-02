@@ -409,3 +409,4 @@ main.wide .page.case { max-width: 1040px; }
 .vm-story { align-items: center; }
 .vm-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .vm-text { margin-top: 24px; max-width: 40em; }
+.vm-pair figcaption { font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-top: 10px; }
