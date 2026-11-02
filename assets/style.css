@@ -310,3 +310,14 @@ main .eyebrow, main .section-title, main .label, main .text-links, main .post-ta
   .vm-row3 .vm-row3-last { grid-column: 1 / -1; }
   .vm-row2 { grid-template-columns: 1fr; }
 }
+
+/* visual merchandising: a tall photo beside a wide one, both the same height */
+.vm-mix { display: grid; grid-template-columns: 1fr 1.78fr; gap: 20px; margin-top: 20px; }
+.vm-mix figure { margin: 0; }
+.vm-mix img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.vm-mix figure:first-child img { aspect-ratio: 3 / 4; }
+.vm-mix figure:last-child img { aspect-ratio: 4 / 3; }
+@media (max-width: 640px) {
+  .vm-mix { grid-template-columns: 1fr; gap: 12px; margin-top: 12px; }
+  .vm-mix img { height: auto; }
+}
