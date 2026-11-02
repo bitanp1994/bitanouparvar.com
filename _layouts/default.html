@@ -52,6 +52,21 @@
       if (!t || !m) return;
       function place() { m.style.setProperty('--drop-indent', t.getBoundingClientRect().left + 'px'); }
       place(); window.addEventListener('resize', place);
+
+      // On touch screens there is no hover: a tap on "Projects" opens or closes the list,
+      // a tap anywhere else closes it. With a mouse, hover opens it and a click goes to the Projects page.
+      var drop = document.querySelector('.nav-drop');
+      var touch = window.matchMedia('(hover: none)');
+      t.addEventListener('click', function (e) {
+        if (!touch.matches) return;
+        e.preventDefault();
+        var open = drop.classList.toggle('open');
+        t.setAttribute('aria-expanded', open);
+        place();
+      });
+      document.addEventListener('click', function (e) {
+        if (!drop.contains(e.target)) { drop.classList.remove('open'); t.setAttribute('aria-expanded', 'false'); }
+      });
     })();
   </script>
 </body>

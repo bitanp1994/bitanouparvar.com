@@ -243,3 +243,9 @@ main .eyebrow, main .section-title, main .label, main .text-links, main .post-ta
   .drop-inner { padding-left: var(--drop-indent, 96px); padding-right: 24px; }
 }
 @media (max-width: 820px) { .header-inner { row-gap: 40px; } }
+
+/* touch screens: the dropdown opens only on tap (no sticky hover/focus) */
+@media (hover: none) {
+  .nav-drop:hover .drop-menu, .nav-drop:focus-within .drop-menu { display: none; }
+  .nav-drop.open .drop-menu { display: block; }
+}
