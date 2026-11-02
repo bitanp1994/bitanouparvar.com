@@ -25,7 +25,13 @@
           <div class="drop-menu">
             <div class="drop-inner">
               <a href="{{ '/projects/asoo-design/' | relative_url }}">Jewelry making</a>
-              <a href="{{ '/projects/' | relative_url }}#retail">Retail projects</a>
+              <div class="sub-drop">
+                <a class="sub-toggle" href="{{ '/projects/' | relative_url }}#retail" aria-haspopup="true" aria-expanded="false">Retail projects <span class="chev" aria-hidden="true">›</span></a>
+                <div class="sub-menu">
+                  <a href="{{ '/projects/visual-merchandising/' | relative_url }}">Visual merchandising</a>
+                  <a href="{{ '/projects/vm-performance-report/' | relative_url }}">VM performance report</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -67,8 +73,18 @@
         t.setAttribute('aria-expanded', open);
         place();
       });
+      // "Retail projects" opens its own small list: on hover with a mouse, on tap on touch screens.
+      var sub = document.querySelector('.sub-drop'), st = document.querySelector('.sub-toggle');
+      if (sub && st) st.addEventListener('click', function (e) {
+        if (!touch.matches) return;
+        e.preventDefault();
+        st.setAttribute('aria-expanded', sub.classList.toggle('open'));
+      });
       document.addEventListener('click', function (e) {
-        if (!drop.contains(e.target)) { drop.classList.remove('open'); t.setAttribute('aria-expanded', 'false'); }
+        if (!drop.contains(e.target)) {
+          drop.classList.remove('open'); t.setAttribute('aria-expanded', 'false');
+          if (sub) { sub.classList.remove('open'); st.setAttribute('aria-expanded', 'false'); }
+        }
       });
     })();
   </script>

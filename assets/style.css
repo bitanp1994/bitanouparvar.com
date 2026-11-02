@@ -288,3 +288,19 @@ main .eyebrow, main .section-title, main .label, main .text-links, main .post-ta
   .vm-gallery .vm-wall { grid-column: 1 / -1; grid-row: auto; }
   .vm-gallery .vm-wall img { aspect-ratio: 3 / 4; }
 }
+
+/* second-level list under "Retail projects" */
+.sub-drop { display: flex; flex-direction: column; }
+.sub-menu { display: none; flex-direction: column; gap: 12px; padding: 12px 0 2px 14px; margin-left: 1px; border-left: 1px solid var(--line); }
+.sub-drop:hover .sub-menu, .sub-drop:focus-within .sub-menu, .sub-drop.open .sub-menu { display: flex; }
+.sub-toggle .chev { display: inline-block; margin-left: 4px; transition: transform .15s ease; }
+.sub-drop:hover .chev, .sub-drop:focus-within .chev, .sub-drop.open .chev { transform: rotate(90deg); }
+.drop-inner .sub-menu a { white-space: nowrap; font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.drop-inner .sub-menu a:hover { color: var(--text); }
+@media (hover: none) {
+  .sub-drop:hover .sub-menu, .sub-drop:focus-within .sub-menu { display: none; }
+  .sub-drop.open .sub-menu { display: flex; }
+  .sub-drop:hover .chev, .sub-drop:focus-within .chev { transform: none; }
+  .sub-drop.open .chev { transform: rotate(90deg); }
+}
+@media (prefers-reduced-motion: reduce) { .sub-toggle .chev { transition: none; } }
