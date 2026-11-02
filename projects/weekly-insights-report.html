@@ -1,58 +1,68 @@
 ---
 layout: default
 title: Weekly Insights Report
+wide: true
 permalink: /projects/weekly-insights-report/
 ---
-<article class="page insights">
+<article class="page case">
   <p class="eyebrow"><a href="{{ '/projects/' | relative_url }}">Projects</a> / Retail projects</p>
   <h1>Weekly Insights Report</h1>
   <p class="lede">A one-page weekly report that turns sales data into something the team can read in five minutes and act on.</p>
 
-  <h2>Why I made it</h2>
-  <p>I felt there was a gap in how we made decisions: we didn't have a clear picture of what the numbers were telling us. I suggested closing that gap by translating our data into insights and stories the whole team could benefit from.</p>
+  <section class="case-row">
+    <h2 class="case-label">The gap</h2>
+    <div class="case-body"><p>I felt there was a gap in how we made decisions: we didn't have a clear picture of what the numbers were telling us. I suggested closing that gap by translating our data into insights and stories the whole team could benefit from.</p></div>
+  </section>
 
-  <h2>What's on the page</h2>
-  <a class="sample-report" href="{{ '/assets/img/sample-report.jpg' | relative_url }}" target="_blank" rel="noopener">
-    <img src="{{ '/assets/img/sample-report.jpg' | relative_url }}" alt="Sample weekly report: total sales, traffic, conversion, items per guest and average price, top sellers by category, a 'How we can help this week' list and a QR code to the team check-in" width="1700" height="2200" loading="lazy">
-  </a>
-  <p class="caption">Sample report with example numbers.</p>
-
-  <ul class="specs">
+  <section class="case-row">
+    <h2 class="case-label">The report</h2>
+    <div class="case-body case-two">
+      <div>
+        <a class="sample-report" href="{{ '/assets/img/sample-report.jpg' | relative_url }}" target="_blank" rel="noopener">
+          <img src="{{ '/assets/img/sample-report.jpg' | relative_url }}" alt="Sample weekly report: total sales, traffic, conversion, items per guest and average price, top sellers by category, a 'How we can help this week' list and a QR code to the team check-in" width="1700" height="2200" loading="lazy">
+        </a>
+        <p class="caption">Sample report with example numbers.</p>
+      </div>
+      <ul class="specs">
     <li><span class="label">The week</span><span>Total sales against plan and last year.</span></li>
     <li><span class="label">The drivers</span><span>Traffic, conversion, items per guest and average price, each with a one-line explanation.</span></li>
     <li><span class="label">Top sellers</span><span>The three best styles in each key category.</span></li>
     <li><span class="label">Next steps</span><span>"How we can help this week": what's working, what to watch and where the gaps are.</span></li>
     <li><span class="label">Feedback</span><span>A QR code to Limu, so the team can add what the numbers don't show.</span></li>
   </ul>
+    </div>
+  </section>
 
-  <h2>Limu: the floor check-in</h2>
-  <p>Numbers show what sold, but they can't show why a guest walked out empty-handed. So I built Limu, a short weekly check-in the team fills in on their phones in about two minutes. A QR code on the report leads straight to it.</p>
-  <ul class="learned">
+  <section class="case-row">
+    <h2 class="case-label">The check-in</h2>
+    <div class="case-body case-two">
+      <div>
+        <p>Numbers show what sold, but they can't show why a guest walked out empty-handed. So I built Limu, a short weekly check-in the team fills in on their phones in about two minutes. A QR code on the report leads straight to it.</p>
+        <ul class="learned">
     <li>It asks what guests couldn't find, why they left without buying, and what got in the way that week.</li>
     <li>Before the new questions, it shows what the team said the week before, so everyone can see their answers being used.</li>
     <li>A lemon mascot keeps it light, so people actually come back to it.</li>
   </ul>
-  <div class="phone-shots">
-    <figure><img src="{{ '/assets/img/limu/welcome.png' | relative_url }}" alt="Limu welcome screen: a lemon mascot showing how many team members have checked in this week" loading="lazy"><figcaption>Weekly progress</figcaption></figure>
-    <figure><img src="{{ '/assets/img/limu/reveal.png' | relative_url }}" alt="Limu screen showing what the team said last week: reasons guests left and products they couldn't find" loading="lazy"><figcaption>Last week's answers</figcaption></figure>
-    <figure><img src="{{ '/assets/img/limu/question.png' | relative_url }}" alt="Limu question asking why guests left without buying, with multiple-choice options" loading="lazy"><figcaption>This week's questions</figcaption></figure>
-    <figure><img src="{{ '/assets/img/limu/done.png' | relative_url }}" alt="Limu thank-you screen after submitting" loading="lazy"><figcaption>Done in two minutes</figcaption></figure>
-  </div>
-  <p class="caption">Screens from Limu, shown with example answers.</p>
+      </div>
+      <div>
+        <div class="phone-shots two">
+          <figure><img src="{{ '/assets/img/limu/reveal.png' | relative_url }}" alt="Limu screen showing what the team said last week: reasons guests left and products they couldn't find" loading="lazy"><figcaption>Last week's answers</figcaption></figure>
+          <figure><img src="{{ '/assets/img/limu/question.png' | relative_url }}" alt="Limu question asking why guests left without buying, with multiple-choice options" loading="lazy"><figcaption>This week's questions</figcaption></figure>
+        </div>
+        <p class="caption">Screens from Limu, with example answers.</p>
+      </div>
+    </div>
+  </section>
 
-  <h2>How it's used</h2>
-  <p>The whole team uses the report to create a better guest experience, and each group puts it to work in its own way:</p>
-  <ul class="specs">
+  <section class="case-row">
+    <h2 class="case-label">The impact</h2>
+    <div class="case-body">
+      <p>The whole team uses the report to create a better guest experience, and each group puts it to work in its own way:</p>
+      <ul class="specs">
     <li><span class="label">Management</span><span>The starting point for weekly and monthly business recaps.</span></li>
     <li><span class="label">Back of house</span><span>Reorganizing the golden zone so the fastest-moving styles are closest to hand.</span></li>
     <li><span class="label">Visual merchandising</span><span>Deciding which products to prioritize and how to merchandise them.</span></li>
   </ul>
-
-  <h2>What I learned</h2>
-  <ul class="learned">
-    <li>Data only helps when people can read it in minutes. Fewer numbers, explained well, beat a full dashboard.</li>
-    <li>Week-over-week comparisons tell a better story than a single total.</li>
-    <li>Every insight needs an action next to it, or it gets forgotten.</li>
-    <li>Numbers and guest conversations work best together. Each one fills the other's blind spot.</li>
-  </ul>
+    </div>
+  </section>
 </article>
