@@ -226,3 +226,16 @@ main .eyebrow, main .section-title, main .label, main .text-links, main .post-ta
   .split-text { padding: 40px 0 64px; }
 }
 .split-photo img { width: auto; max-width: 100%; max-height: calc(100vh - 200px); }
+
+/* mobile header: more room under the name, and a roomier dropdown */
+@media (max-width: 820px) {
+  .header-inner { row-gap: 26px; }
+  .drop-menu { padding-top: 34px; }
+  .drop-inner { padding: 18px 24px 22px 0; gap: 16px; }
+}
+@media (max-width: 820px) {
+  .site-header { position: relative; }
+  .nav-drop { position: static; }
+  .drop-menu { left: 0; right: 0; top: calc(100% + 1px); padding-top: 0; }
+  .drop-inner { padding: 22px clamp(24px, 6vw, 88px) 24px; gap: 18px; border-bottom: 1px solid var(--line); }
+}
