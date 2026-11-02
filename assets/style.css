@@ -295,3 +295,18 @@ main .eyebrow, main .section-title, main .label, main .text-links, main .post-ta
 .nav-drop.open .drop-menu, .nav-drop:has(:focus-visible) .drop-menu { display: block; }
 .sub-drop.open .sub-menu, .sub-drop:has(:focus-visible) .sub-menu { display: flex; }
 .sub-drop.open .chev, .sub-drop:has(:focus-visible) .chev { transform: rotate(90deg); }
+
+/* visual merchandising: second and third rows */
+.vm-row3, .vm-row2 { display: grid; gap: 20px; margin-top: 20px; }
+.vm-row3 { grid-template-columns: repeat(3, 1fr); }
+.vm-row2 { grid-template-columns: 1fr 1fr; }
+.vm-row3 figure, .vm-row2 figure { margin: 0; }
+.vm-row3 img, .vm-row2 img { width: 100%; object-fit: cover; display: block; }
+.vm-row3 img { aspect-ratio: 3 / 4; }
+.vm-row2 img { aspect-ratio: 4 / 3; }
+@media (max-width: 640px) {
+  .vm-row3, .vm-row2 { gap: 12px; margin-top: 12px; }
+  .vm-row3 { grid-template-columns: 1fr 1fr; }
+  .vm-row3 .vm-row3-last { grid-column: 1 / -1; }
+  .vm-row2 { grid-template-columns: 1fr; }
+}
