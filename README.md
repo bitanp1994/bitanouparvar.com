@@ -15,7 +15,8 @@ This repository is the website. GitHub Pages builds it automatically every time 
 | About | `about.md` |
 | Projects list | `projects/index.html` |
 | Jewelry making → Asoo Design | `projects/asoo-design.html` (photos: `assets/img/jewelry/`) |
-| Retail projects → VM Performance Report | `projects/vm-performance-report.md` |
+| Retail projects → Visual Merchandising | `projects/visual-merchandising.html` |
+| Retail projects → Weekly Insights Report | `projects/weekly-insights-report.html` |
 | Resume | `resume.html` (PDF: `assets/Bita_Nouparvar_Resume.pdf`, picture: `assets/img/resume.png`) |
 | Journal | `journal.html` + entries in `_posts/` |
 | Menu (incl. Projects dropdown) and footer | `_layouts/default.html` |

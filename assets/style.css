@@ -337,3 +337,34 @@ main .eyebrow, main .section-title, main .label, main .text-links, main .post-ta
   body.home .split-screen { padding-top: 18px; padding-bottom: 18px; }
 }
 @media (min-width: 821px) and (max-width: 1100px) { body.home .split-screen { grid-template-columns: 1fr 1.5fr; } }
+
+/* Weekly Insights Report page */
+.insights h2 { margin-top: 2.4em; }
+.insights .specs { margin-top: 28px; }
+.insights .specs strong { display: block; margin-bottom: 4px; }
+.learned { padding-left: 18px; }
+.learned li { margin-bottom: .6em; }
+.caption { font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-top: 10px; text-align: left; }
+.report-anatomy { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
+.sheet { border: 1px solid var(--line); background: #f7f7f5; padding: 16px; display: flex; flex-direction: column; gap: 14px; aspect-ratio: 3 / 4; }
+.sheet-title { margin: 0; font-size: .66rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); text-align: left; }
+.sheet-kpis { display: grid; grid-template-columns: 1.3fr 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 6px; height: 26%; }
+.kpi { background: #e4e3df; }
+.kpi.big { grid-row: span 2; background: #d2d1cc; }
+.sheet-body { flex: 1; display: grid; grid-template-columns: 2fr 1fr; gap: 10px; }
+.mini-charts { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.mini, .stacks { display: flex; align-items: flex-end; gap: 4px; border-bottom: 1px solid #c9c8c3; }
+.mini i { flex: 1; background: #9fb3c4; }
+.notes { background: #fff; border: 1px solid var(--line); padding: 10px 8px; display: flex; flex-direction: column; gap: 7px; }
+.notes span { height: 5px; background: #e4e3df; }
+.notes span:first-child { background: #c98a8a; width: 70%; }
+.pairs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; flex: 1.2; }
+.pair { display: flex; flex-direction: column; justify-content: center; gap: 4px; }
+.pair b { height: 9px; background: #e8c27a; display: block; }
+.pair b.now { background: #9fb3c4; margin-bottom: 4px; }
+.stacks { flex: 1; }
+.stacks i { flex: 1; background: linear-gradient(to top, #e8c27a 0 55%, #b85b5b 55%); }
+.tile-bars { display: flex; align-items: flex-end; gap: 8px; height: 46%; width: 55%; margin-bottom: 18px; }
+.tile-bars i { flex: 1; background: var(--bg); opacity: .85; }
+@media (max-width: 640px) { .report-anatomy { grid-template-columns: 1fr; } }
+.pair { justify-content: space-evenly; gap: 0; } .pair b { height: 14px; } .pair b.now { margin-bottom: 0; }
