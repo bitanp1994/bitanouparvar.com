@@ -45,5 +45,14 @@
       </span>
     </div>
   </footer>
+  <script>
+    // On phones, start the Projects dropdown items right under the word "Projects".
+    (function () {
+      var t = document.querySelector('.nav-drop > a'), m = document.querySelector('.drop-inner');
+      if (!t || !m) return;
+      function place() { m.style.setProperty('--drop-indent', t.getBoundingClientRect().left + 'px'); }
+      place(); window.addEventListener('resize', place);
+    })();
+  </script>
 </body>
 </html>
