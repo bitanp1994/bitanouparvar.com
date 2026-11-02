@@ -55,37 +55,41 @@
     </div>
   </footer>
   <script>
-    // On phones, start the Projects dropdown items right under the word "Projects".
+    // Projects menu. Mouse: hover opens. Touch or pen: tap opens/closes (never jumps to a page).
+    // "Retail projects" has its own list that opens only when you hover or tap it.
     (function () {
-      var t = document.querySelector('.nav-drop > a'), m = document.querySelector('.drop-inner');
-      if (!t || !m) return;
-      function place() { m.style.setProperty('--drop-indent', t.getBoundingClientRect().left + 'px'); }
+      var drop = document.querySelector('.nav-drop'), t = document.querySelector('.nav-drop > a'),
+          menu = document.querySelector('.drop-inner'), sub = document.querySelector('.sub-drop'),
+          st = document.querySelector('.sub-toggle');
+      if (!drop || !t || !menu) return;
+      var pointer = 'mouse', timer = null;
+      document.addEventListener('pointerdown', function (e) { pointer = e.pointerType || 'mouse'; }, true);
+
+      function place() { menu.style.setProperty('--drop-indent', t.getBoundingClientRect().left + 'px'); }
+      function setDrop(on) {
+        drop.classList.toggle('open', on); t.setAttribute('aria-expanded', on);
+        if (!on) setSub(false); else place();
+      }
+      function setSub(on) { if (sub) { sub.classList.toggle('open', on); st.setAttribute('aria-expanded', on); } }
       place(); window.addEventListener('resize', place);
 
-      // On touch screens there is no hover: a tap on "Projects" opens or closes the list,
-      // a tap anywhere else closes it. With a mouse, hover opens it and a click goes to the Projects page.
-      var drop = document.querySelector('.nav-drop');
-      var touch = window.matchMedia('(hover: none)');
+      drop.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') { clearTimeout(timer); setDrop(true); } });
+      drop.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') { timer = setTimeout(function () { setDrop(false); }, 150); } });
       t.addEventListener('click', function (e) {
-        if (!touch.matches) return;
-        e.preventDefault();
-        var open = drop.classList.toggle('open');
-        t.setAttribute('aria-expanded', open);
-        place();
+        if (pointer === 'mouse') return;          // mouse click: go to the Projects page
+        e.preventDefault(); setDrop(!drop.classList.contains('open'));
       });
-      // "Retail projects" opens its own small list: on hover with a mouse, on tap on touch screens.
-      var sub = document.querySelector('.sub-drop'), st = document.querySelector('.sub-toggle');
-      if (sub && st) st.addEventListener('click', function (e) {
-        if (!touch.matches) return;
-        e.preventDefault();
-        st.setAttribute('aria-expanded', sub.classList.toggle('open'));
-      });
-      document.addEventListener('click', function (e) {
-        if (!drop.contains(e.target)) {
-          drop.classList.remove('open'); t.setAttribute('aria-expanded', 'false');
-          if (sub) { sub.classList.remove('open'); st.setAttribute('aria-expanded', 'false'); }
-        }
-      });
+
+      if (sub && st) {
+        sub.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') setSub(true); });
+        sub.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') setSub(false); });
+        st.addEventListener('click', function (e) {
+          if (pointer === 'mouse') return;        // mouse click: go to the retail projects
+          e.preventDefault(); setSub(!sub.classList.contains('open'));
+        });
+      }
+      document.addEventListener('click', function (e) { if (!drop.contains(e.target)) setDrop(false); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setDrop(false); });
     })();
   </script>
 </body>

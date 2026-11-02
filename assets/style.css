@@ -139,7 +139,6 @@ p.text-links { margin: 32px 0 0; }
 /* Projects dropdown in the header */
 .nav-drop { position: relative; }
 .drop-menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); padding-top: 14px; display: none; z-index: 20; }
-.nav-drop:hover .drop-menu, .nav-drop:focus-within .drop-menu { display: block; }
 .drop-inner { background: var(--bg); border: 1px solid var(--line); padding: 18px 22px; min-width: 230px; display: flex; flex-direction: column; gap: 8px; }
 .drop-inner .drop-group { margin: 6px 0 0; color: var(--muted); font-size: .66rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 500; }
 .drop-inner .drop-group:first-child { margin-top: 0; }
@@ -244,11 +243,6 @@ main .eyebrow, main .section-title, main .label, main .text-links, main .post-ta
 }
 @media (max-width: 820px) { .header-inner { row-gap: 40px; } }
 
-/* touch screens: the dropdown opens only on tap (no sticky hover/focus) */
-@media (hover: none) {
-  .nav-drop:hover .drop-menu, .nav-drop:focus-within .drop-menu { display: none; }
-  .nav-drop.open .drop-menu { display: block; }
-}
 .home-contact { margin-top: 28px; }
 
 /* homepage on laptops/desktops: everything (header, photo, text, footer) fits in one screen */
@@ -292,15 +286,12 @@ main .eyebrow, main .section-title, main .label, main .text-links, main .post-ta
 /* second-level list under "Retail projects" */
 .sub-drop { display: flex; flex-direction: column; }
 .sub-menu { display: none; flex-direction: column; gap: 12px; padding: 12px 0 2px 14px; margin-left: 1px; border-left: 1px solid var(--line); }
-.sub-drop:hover .sub-menu, .sub-drop:focus-within .sub-menu, .sub-drop.open .sub-menu { display: flex; }
 .sub-toggle .chev { display: inline-block; margin-left: 4px; transition: transform .15s ease; }
-.sub-drop:hover .chev, .sub-drop:focus-within .chev, .sub-drop.open .chev { transform: rotate(90deg); }
 .drop-inner .sub-menu a { white-space: nowrap; font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
 .drop-inner .sub-menu a:hover { color: var(--text); }
-@media (hover: none) {
-  .sub-drop:hover .sub-menu, .sub-drop:focus-within .sub-menu { display: none; }
-  .sub-drop.open .sub-menu { display: flex; }
-  .sub-drop:hover .chev, .sub-drop:focus-within .chev { transform: none; }
-  .sub-drop.open .chev { transform: rotate(90deg); }
-}
 @media (prefers-reduced-motion: reduce) { .sub-toggle .chev { transition: none; } }
+
+/* menu open states are set by the script (hover with a mouse, tap on touch); keyboard focus also opens them */
+.nav-drop.open .drop-menu, .nav-drop:has(:focus-visible) .drop-menu { display: block; }
+.sub-drop.open .sub-menu, .sub-drop:has(:focus-visible) .sub-menu { display: flex; }
+.sub-drop.open .chev, .sub-drop:has(:focus-visible) .chev { transform: rotate(90deg); }
