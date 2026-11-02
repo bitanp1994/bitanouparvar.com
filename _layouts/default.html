@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="{{ page.lang | default: site.lang }}" dir="{% if page.lang == 'fa' %}rtl{% else %}ltr{% endif %}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title and page.url != "/" %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.description | default: page.excerpt | strip_html | strip_newlines | truncate: 160 | default: site.description }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Vazirmatn:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="{{ '/' | relative_url }}">{{ site.name }}</a>
+      <nav>
+        {% assign path = page.url %}
+        <a href="{{ '/about/' | relative_url }}" {% if path contains '/about' %}class="active"{% endif %}>About</a>
+        <div class="nav-drop">
+          <a href="{{ '/projects/' | relative_url }}" aria-haspopup="true" {% if path contains '/projects' %}class="active"{% endif %}>Projects</a>
+          <div class="drop-menu">
+            <div class="drop-inner">
+              <a href="{{ '/projects/asoo-design/' | relative_url }}">Jewelry making</a>
+              <a href="{{ '/projects/vm-performance-report/' | relative_url }}">Retail projects</a>
+            </div>
+          </div>
+        </div>
+        <a href="{{ '/resume/' | relative_url }}" {% if path contains '/resume' %}class="active"{% endif %}>Resume</a>
+        <a href="{{ '/journal/' | relative_url }}" {% if path contains '/journal' %}class="active"{% endif %}>Journal</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="{% if page.full %}full{% else %}wrap{% if page.wide %} wide{% endif %}{% endif %}">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span>© {{ site.time | date: '%Y' }} {{ site.name }}</span>
+      <span class="links">
+        <a href="mailto:{{ site.email }}">Email</a>
+        <a href="{{ site.linkedin }}">LinkedIn</a>
+      </span>
+    </div>
+  </footer>
+</body>
+</html>

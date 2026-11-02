@@ -1,0 +1,11 @@
+<ul class="post-list">
+  {% assign lim = include.limit | default: 1000 %}
+  {% for post in include.posts limit: lim %}
+  <li data-tags="{% for t in post.tags %}{{ t | slugify }} {% endfor %}">
+    <a href="{{ post.url | relative_url }}">
+      <span class="post-title">{{ post.title }}</span>
+      <span class="post-meta">{% for t in post.tags %}#{{ t }} {% endfor %}· {{ post.date | date: "%b %Y" }}</span>
+    </a>
+  </li>
+  {% endfor %}
+</ul>

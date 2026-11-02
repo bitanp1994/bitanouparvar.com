@@ -1,0 +1,12 @@
+---
+layout: default
+---
+<article class="post{% if page.lang == 'fa' %} fa{% endif %}">
+  <p class="eyebrow"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time></p>
+  <h1>{{ page.title }}</h1>
+  {{ content }}
+  {% if page.tags.size > 0 %}
+  <p class="post-tags">{% for t in page.tags %}<a href="{{ '/journal/' | relative_url }}#{{ t | slugify }}">#{{ t }}</a>{% endfor %}</p>
+  {% endif %}
+  <p class="back"><a href="{{ '/journal/' | relative_url }}">All journal entries</a></p>
+</article>

@@ -1,0 +1,19 @@
+# ─────────────────────────────────────────────
+#  Your details — edit these, everything else updates automatically
+# ─────────────────────────────────────────────
+name: Bita Nouparvar
+tagline: "Notes on retail, merchandising and apparel, from the store floor."
+email: "bita.nouparvar@gmail.com"
+linkedin: "https://www.linkedin.com/in/bitanouparvar"
+github: "https://github.com/bitanp1994"
+resume_pdf: "assets/Bita_Nouparvar_Resume.pdf"
+
+title: Bita Nouparvar
+description: "Portfolio and notes on retail, merchandising and the fashion industry."
+lang: en
+
+
+permalink: /journal/:year/:title/
+markdown: kramdown
+exclude: [README.md]
+url: https://bitanouparvar.com

@@ -1,0 +1,37 @@
+---
+layout: default
+title: Journal
+---
+<article class="page journal">
+  <p class="section-title journal-label" id="journal-label">Latest entries</p>
+
+  {% if site.posts.size > 0 %}
+    {% include post-list.html posts=site.posts %}
+  {% else %}
+    <p class="muted">First entry coming soon.</p>
+  {% endif %}
+</article>
+
+<script>
+(function () {
+  // Opening /journal/#tagname (from a hashtag on an entry) shows only entries with that tag.
+  var label = document.getElementById('journal-label');
+  var items = document.querySelectorAll('.post-list li');
+  function apply() {
+    var tag = decodeURIComponent(location.hash.slice(1));
+    var any = false;
+    items.forEach(function (li) {
+      var match = !tag || (li.dataset.tags || '').split(' ').indexOf(tag) !== -1;
+      li.hidden = !match; if (match) any = true;
+    });
+    if (tag && any) {
+      label.innerHTML = '#' + tag + ' &nbsp;·&nbsp; <a href="' + location.pathname + '">Show all entries</a>';
+    } else {
+      items.forEach(function (li) { li.hidden = false; });
+      label.textContent = 'Latest entries';
+    }
+  }
+  window.addEventListener('hashchange', apply);
+  apply();
+})();
+</script>
