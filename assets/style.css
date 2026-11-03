@@ -414,3 +414,5 @@ main.wide .page.case { max-width: 1040px; }
 .vm-pair { max-width: 560px; gap: 16px; }
 .vm-story { grid-template-columns: 270px 1fr; }
 @media (max-width: 760px) { .vm-story { grid-template-columns: 1fr; } .vm-story figure { max-width: 300px; } }
+.vm-pair.vm-wide { max-width: 760px; }
+.vm-pair.vm-wide img { aspect-ratio: 4 / 3; }
