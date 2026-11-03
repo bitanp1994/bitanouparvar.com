@@ -418,3 +418,7 @@ main.wide .page.case { max-width: 1040px; }
 .vm-pair.vm-wide img { aspect-ratio: 4 / 3; }
 .vm-pair.vm-trio { grid-template-columns: repeat(3, 1fr); max-width: 760px; }
 @media (max-width: 640px) { .vm-pair.vm-trio { grid-template-columns: 1fr 1fr; } }
+/* sections without side titles */
+.no-label .case-row { grid-template-columns: 1fr; }
+.no-label .vm-story { grid-template-columns: 270px minmax(0, 32em); }
+@media (max-width: 760px) { .no-label .vm-story { grid-template-columns: 1fr; } }
