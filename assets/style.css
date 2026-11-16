@@ -443,3 +443,7 @@ main.wide .page.case { max-width: 1040px; }
 .alist li { counter-increment: a; position: relative; padding-left: 32px; font-size: .84rem; line-height: 1.45; color: var(--muted); text-align: left; }
 .alist li::before { content: counter(a); position: absolute; left: 0; top: 0; width: 22px; height: 22px; border-radius: 50%; background: var(--text); color: var(--bg); font-size: .72rem; font-weight: 600; display: flex; align-items: center; justify-content: center; }
 .alist b { display: block; color: var(--text); font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; margin-bottom: 2px; }
+.annot { grid-template-columns: minmax(0, 1.8fr) minmax(0, 1fr); gap: 32px; align-items: center; }
+.mlist { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+.mlist li { font-size: .82rem; line-height: 1.4; color: var(--muted); text-align: left; }
+.mlist b { display: block; color: var(--text); font-weight: 600; font-size: .82rem; }
