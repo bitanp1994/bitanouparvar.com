@@ -425,3 +425,21 @@ main.wide .page.case { max-width: 1040px; }
 .vm-group { margin: 48px 0 -24px; }
 .weekly-img { max-width: 620px; }
 .specs.why li { grid-template-columns: 8.5em 1fr; }
+
+/* report with margin notes aligned to each section */
+.annot { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 22px; margin-top: 16px; }
+.annot .sample-report { max-width: none; margin: 0; }
+.anotes { position: relative; }
+.anote { position: absolute; left: 0; right: 0; font-size: .8rem; line-height: 1.45; color: var(--muted); border-left: 2px solid var(--line); padding-left: 10px; text-align: left; }
+.anote b { display: block; color: var(--text); font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; margin-bottom: 2px; }
+@media (max-width: 760px) {
+  .annot { grid-template-columns: 1fr; }
+  .anotes { display: flex; flex-direction: column; gap: 12px; }
+  .anote { position: static; }
+}
+.pinwrap { position: relative; }
+.pin { position: absolute; left: -11px; width: 22px; height: 22px; border-radius: 50%; background: var(--text); color: var(--bg); font-size: .72rem; font-weight: 600; display: flex; align-items: center; justify-content: center; }
+.alist { list-style: none; counter-reset: a; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+.alist li { counter-increment: a; position: relative; padding-left: 32px; font-size: .84rem; line-height: 1.45; color: var(--muted); text-align: left; }
+.alist li::before { content: counter(a); position: absolute; left: 0; top: 0; width: 22px; height: 22px; border-radius: 50%; background: var(--text); color: var(--bg); font-size: .72rem; font-weight: 600; display: flex; align-items: center; justify-content: center; }
+.alist b { display: block; color: var(--text); font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; margin-bottom: 2px; }
