@@ -422,3 +422,12 @@ main.wide .page.case { max-width: 1040px; }
 .no-label .case-row { grid-template-columns: 1fr; }
 .no-label .vm-story { grid-template-columns: 270px minmax(0, 32em); }
 @media (max-width: 760px) { .no-label .vm-story { grid-template-columns: 1fr; } }
+
+/* Asoo Design collections */
+.collection { display: grid; grid-template-columns: 260px 1fr; gap: 40px; margin: 56px 0; padding-top: 32px; border-top: 1px solid var(--text); align-items: start; }
+.collection-text h2 { margin: 0 0 .6em; font-size: 1.6rem; }
+.collection-text .eyebrow { margin-bottom: .6em; }
+.collection-photos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.collection-photos figure { margin: 0; }
+.collection-photos img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; display: block; }
+@media (max-width: 760px) { .collection { grid-template-columns: 1fr; gap: 20px; } .collection-photos { grid-template-columns: 1fr 1fr; } }
