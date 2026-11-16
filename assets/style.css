@@ -436,3 +436,7 @@ main.wide .page.case { max-width: 1040px; }
 .collection-photos .lead img { height: 100%; aspect-ratio: auto; }
 @media (max-width: 760px) { .collection-photos { grid-template-columns: 1fr 1fr; } .collection-photos .lead { grid-column: 1 / -1; grid-row: auto; } .collection-photos .lead img { aspect-ratio: 3 / 4; height: auto; } }
 .collection-photos .lead img { object-position: 82% 40%; }
+.collection-photos img[src*="half-moon-stem"] { object-position: 45% 40%; }
+.more-pieces { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--line); }
+.gallery.four { grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 16px; }
+@media (max-width: 640px) { .gallery.four { grid-template-columns: 1fr 1fr; } }
