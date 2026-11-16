@@ -423,3 +423,5 @@ main.wide .page.case { max-width: 1040px; }
 .no-label .vm-story { grid-template-columns: 270px minmax(0, 32em); }
 @media (max-width: 760px) { .no-label .vm-story { grid-template-columns: 1fr; } }
 .vm-group { margin: 48px 0 -24px; }
+.weekly-img { max-width: 620px; }
+.specs.why li { grid-template-columns: 8.5em 1fr; }
