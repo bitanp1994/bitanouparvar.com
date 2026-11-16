@@ -469,3 +469,27 @@ main.wide .page.case { max-width: 1040px; }
 .more-pieces { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--line); }
 .gallery.four { grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 16px; }
 @media (max-width: 640px) { .gallery.four { grid-template-columns: 1fr 1fr; } }
+
+/* Asoo Design: compact layout, each collection is one row of small photos */
+.collection { grid-template-columns: 240px 1fr; gap: 32px; margin: 36px 0; padding-top: 22px; }
+.collection-text p { font-size: .9rem; line-height: 1.55; }
+.collection-photos { grid-template-columns: repeat(5, 1fr); gap: 8px; }
+.collection-photos .lead { grid-row: auto; }
+.collection-photos img, .collection-photos .lead img { aspect-ratio: 3 / 4; height: auto; }
+.more-pieces { margin-top: 32px; padding-top: 22px; }
+.gallery.four { grid-template-columns: repeat(6, 1fr); gap: 8px; max-width: 70%; }
+@media (max-width: 760px) {
+  .collection { grid-template-columns: 1fr; gap: 14px; }
+  .collection-photos { grid-template-columns: repeat(3, 1fr); }
+  .collection-photos .lead { grid-column: auto; }
+  .gallery.four { grid-template-columns: repeat(4, 1fr); max-width: none; }
+}
+.collection { grid-template-columns: 1fr; gap: 14px; }
+.collection-text { max-width: 46em; }
+.collection-text h2 { margin-bottom: .4em; }
+main.wide .page:has(.intro-cols) { max-width: none; }
+.intro-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.intro-cols .jewelry-intro { max-width: none; font-size: .92rem; }
+.collection-photos img, .collection-photos .lead img { aspect-ratio: 1 / 1; }
+.collection { margin: 28px 0; }
+@media (max-width: 760px) { .intro-cols { grid-template-columns: 1fr; gap: 0; } }
