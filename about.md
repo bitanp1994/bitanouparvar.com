@@ -3,13 +3,16 @@ layout: page
 title: About
 ---
 
-My name is Bita Nouparvar. I was born and raised in Tehran, Iran, and have lived in Canada since 2023. I hold a master's degree in electrical engineering, specializing in power electronics, from K. N. Toosi University of Technology. Following my studies, I worked as a research and development engineer at the Niroo Research Institute (NRI) and as a technical engineer at Petro Tajhiz Daria. Alongside my engineering career, my lifelong love for art led me to start crafting handmade jewelry, eventually building a small brand around it called [Asoo Design](/projects/asoo-design/). Over time, I realized I couldn't picture my long-term future in a traditional engineering setting. I found myself drawn to fabric, color, and most of all, tangible real-world results. I no longer wanted to work with high voltage, currents, converters, and inverters. In 2022, I chose to leave the engineering field entirely to pursue this true passion.
+I grew up surrounded by fabric. My mother is a seamstress, and as a child I loved sketching designs and watching her turn them into real clothes. That was my first lesson in what I still love most: an idea becoming something you can hold and wear.
 
+I chose engineering anyway. I earned a master's degree in electrical engineering, specializing in power electronics, from K. N. Toosi University of Technology, then worked as a research and development engineer at the Niroo Research Institute (NRI) and as a technical engineer at Petro Tajhiz Daria. Engineering taught me how to break a problem down and build a system that solves it. But I kept coming back to fabric, colour and tangible results, not converters and inverters.
 
- In 2023, I moved to Canada with a clear goal: to build a career in the apparel industry, starting my journey here as an educator at a lululemon store. Starting from scratch in a new country, with a new language and culture, created a massive cognitive load, and it hasn't been easy.
+So I started teaching myself. I followed a designer's fashion design lessons online, learned colour theory and the basics of garment construction, and studied how inspiration becomes a story. I read about the anatomy of the body and how clothes move with it. I brought all of it into handmade jewelry, and built a small brand around it: [Asoo Design](/projects/asoo-design/). In 2022, I left engineering to follow this path fully.
 
-I have now been with lululemon for nearly two and a half years, contributing both as an educator and as our store’s visual merchandiser. Today, I am focused on actively building and making my path forward as I look to grow within corporate retail, merchandising, and planning.
+In 2023, I moved to Canada with one goal: to build a career in the apparel industry. I started as an educator at a lululemon store, and later also became the store's visual merchandiser. Starting from scratch in a new country, with a new language and culture, has not been easy. But it gave me a new kind of education. Every day I hear guests' stories, see what they need and what they can't find, and watch how the market competes for them. Alongside the floor, I've been learning the business side of the story: strategy, management, systems thinking and teamwork.
 
-This portfolio is a space where I share that personal journey, along with the direct thoughts, observations, and ideas I have gained about this industry.
+That is where I stand today: between engineering and art. I'm a problem solver who loves storytelling, and I want to bring both to merchandising and planning, where the numbers and the stories behind a product meet.
+
+This portfolio is where I share that journey, along with my thoughts and observations about the industry.
 
 <p class="text-links"><a href="/resume/">See my resume →</a><a href="/projects/">See my projects →</a></p>
