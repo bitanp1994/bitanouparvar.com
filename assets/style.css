@@ -431,3 +431,8 @@ main.wide .page.case { max-width: 1040px; }
 .collection-photos figure { margin: 0; }
 .collection-photos img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; display: block; }
 @media (max-width: 760px) { .collection { grid-template-columns: 1fr; gap: 20px; } .collection-photos { grid-template-columns: 1fr 1fr; } }
+.collection-photos { grid-template-columns: 1.15fr 1fr 1fr; }
+.collection-photos .lead { grid-row: span 2; }
+.collection-photos .lead img { height: 100%; aspect-ratio: auto; }
+@media (max-width: 760px) { .collection-photos { grid-template-columns: 1fr 1fr; } .collection-photos .lead { grid-column: 1 / -1; grid-row: auto; } .collection-photos .lead img { aspect-ratio: 3 / 4; height: auto; } }
+.collection-photos .lead img { object-position: 82% 40%; }
