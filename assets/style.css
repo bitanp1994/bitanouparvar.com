@@ -645,3 +645,16 @@ main .eyebrow, .asoo .eyebrow, .collection-text .eyebrow, .more-pieces .eyebrow,
 .cs-method, main .caption { font-size: var(--t-label); line-height: 1.6; }
 @media (max-width: 640px) { :root { --t-title: 2.1rem; --t-lede: 1.1rem; } }
 .asoo p.eyebrow, .asoo .collection-text p.eyebrow, main p.eyebrow { font-size: var(--t-label); line-height: 1.4; }
+
+/* Daydreams */
+.dd-grid { max-width: 1000px; margin: 32px auto 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.dd-grid figure { margin: 0; }
+.dd-grid img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; display: block; }
+.dd-grid .dd-wide { grid-column: span 2; }
+.dd-grid .dd-wide img { aspect-ratio: 4 / 3; }
+.dd-grid figcaption { font-size: var(--t-label); color: var(--muted); margin-top: 8px; line-height: 1.5; }
+.dd-link { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 16px 0; border-top: 1px solid var(--text); border-bottom: 1px solid var(--line); margin-bottom: 32px; text-decoration: none; }
+.dd-link span:last-child { font-size: var(--t-small); }
+.dd-link:hover span:last-child { text-decoration: underline; }
+@media (max-width: 760px) { .dd-grid { grid-template-columns: 1fr 1fr; } }
+.dd-grid { max-width: none; margin: 32px 0 0; } .daydreams .lede { max-width: 34em; }
