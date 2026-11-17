@@ -658,3 +658,4 @@ main .eyebrow, .asoo .eyebrow, .collection-text .eyebrow, .more-pieces .eyebrow,
 .dd-link:hover span:last-child { text-decoration: underline; }
 @media (max-width: 760px) { .dd-grid { grid-template-columns: 1fr 1fr; } }
 .dd-grid { max-width: none; margin: 32px 0 0; } .daydreams .lede { max-width: 34em; }
+.dd-grid { grid-template-columns: repeat(3, 1fr); } @media (max-width: 760px) { .dd-grid { grid-template-columns: 1fr 1fr; } }
