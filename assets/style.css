@@ -493,3 +493,16 @@ main.wide .page:has(.intro-cols) { max-width: none; }
 .collection-photos img, .collection-photos .lead img { aspect-ratio: 1 / 1; }
 .collection { margin: 28px 0; }
 @media (max-width: 760px) { .intro-cols { grid-template-columns: 1fr; gap: 0; } }
+.cs-h { font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 500; margin: 22px 0 8px; }
+.cs-tile { justify-content: center; gap: 2px; }
+.cs-word { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 600; letter-spacing: -.03em; line-height: 1.05; }
+.cs-vs { font-size: .8rem; opacity: .6; margin: 4px 0; }
+.cs-tile .proj-stat-label { margin-top: 18px; }
+/* projects page: one row per category, three cards across */
+.proj-cols { grid-template-columns: 1fr; gap: 40px; }
+.proj-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start; }
+.proj-col h2.label { grid-column: 1 / -1; }
+.proj-col .proj-card + .proj-card { margin-top: 0; }
+.proj-tile { padding: 22px; }
+.tile-bars { height: 40%; }
+@media (max-width: 640px) { .proj-col { grid-template-columns: 1fr 1fr; gap: 12px; } .cs-word { font-size: 1.4rem; } }
