@@ -19,6 +19,7 @@
       <a class="brand" href="{{ '/' | relative_url }}">{{ site.name }}</a>
       <nav>
         {% assign path = page.url %}
+        <a href="{{ '/' | relative_url }}" {% if path == '/' %}class="active"{% endif %}>Home</a>
         <a href="{{ '/about/' | relative_url }}" {% if path contains '/about' %}class="active"{% endif %}>About</a>
         <div class="nav-drop">
           <a href="{{ '/projects/' | relative_url }}" aria-haspopup="true" {% if path contains '/projects' %}class="active"{% endif %}>Projects</a>
@@ -48,7 +49,7 @@
 
   <footer class="site-footer">
     <div class="wrap footer-inner">
-      <span>© {{ site.time | date: '%Y' }} {{ site.name }}</span>
+      <span>{{ site.name }}</span>
       <span class="links">
         <a href="mailto:{{ site.email }}">Email</a>
         <a href="{{ site.linkedin }}">LinkedIn</a>
