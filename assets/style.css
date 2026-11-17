@@ -769,3 +769,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--text); outline-
   .drop-menu, .nav-drop .drop-menu, .nav-drop.open .drop-menu { left: -14px; }
   .drop-panel { padding-left: 14px; padding-right: 22px; }
 }
+
+/* project card descriptions + measured result */
+.proj-desc{display:block;font-size:var(--t-small);color:#555;line-height:1.45;margin-top:4px}
+.case-result{margin-top:18px;padding:14px 16px;border-left:3px solid #111;background:#f6f6f4}
