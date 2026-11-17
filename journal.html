@@ -3,10 +3,20 @@ layout: default
 title: Journal
 ---
 <article class="page journal">
-  <a class="dd-link" href="{{ '/journal/daydreams/' | relative_url }}"><span class="label">Daydreams</span><span>Collages, sketches and colour studies →</span></a>
   {% if site.posts.size > 0 %}
   <p class="section-title journal-label" id="journal-label">Latest entries</p>
-    {% include post-list.html posts=site.posts %}
+    <ul class="jlist">
+    {% for post in site.posts %}
+    <li data-tags="{% for t in post.tags %}{{ t | slugify }} {% endfor %}">
+      <a href="{{ post.url | relative_url }}">
+        <span class="jdate">{{ post.date | date: "%B %-d, %Y" }}</span>
+        <span class="jtitle">{{ post.title }}</span>
+        <span class="jexcerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 170 }}</span>
+        <span class="jtags">{% for t in post.tags %}#{{ t }} {% endfor %}</span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
   {% else %}
     <p class="muted">First entry coming soon.</p>
   {% endif %}
@@ -17,7 +27,7 @@ title: Journal
   // Opening /journal/#tagname (from a hashtag on an entry) shows only entries with that tag.
   var label = document.getElementById('journal-label');
   if (!label) return;
-  var items = document.querySelectorAll('.post-list li');
+  var items = document.querySelectorAll('.jlist li');
   function apply() {
     var tag = decodeURIComponent(location.hash.slice(1));
     var any = false;

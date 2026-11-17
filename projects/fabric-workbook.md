@@ -1,8 +1,10 @@
 ---
-layout: post
-title: "My first fabric dictionary"
-tags: [fabric, textiles, learning]
+layout: page
+title: Fabric Identification Workbook
+permalink: /projects/fabric-workbook/
 ---
+
+<p class="eyebrow crumb"><a href="/projects/">Projects</a> / Design and craft · Mehrazi Fashion School · 2025</p>
 
 Over the past two months, I took a textile course at Mehrazi Fashion School in Tehran, taught by Masood Talari.
 

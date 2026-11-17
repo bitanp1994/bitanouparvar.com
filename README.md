@@ -14,7 +14,7 @@ This repository is the website. GitHub Pages builds it automatically every time 
 | Home | `index.html` (photo: `assets/img/bita.jpg`) |
 | About | `about.md` |
 | Projects list | `projects/index.html` |
-| Jewelry making → Asoo Design | `projects/asoo-design.html` (photos: `assets/img/jewelry/`) |
+| Design and craft → Asoo Design, Fabric workbook, Daydreams | `projects/asoo-design.html` (photos: `assets/img/jewelry/`) |
 | Retail projects → Visual Merchandising | `projects/visual-merchandising.html` |
 | Retail projects → Weekly Insights Report | `projects/weekly-insights-report.html` |
 | Resume | `resume.html` (PDF: `assets/Bita_Nouparvar_Resume.pdf`, picture: `assets/img/resume.png`) |

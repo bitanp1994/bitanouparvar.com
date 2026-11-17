@@ -678,3 +678,44 @@ main .eyebrow, .asoo .eyebrow, .collection-text .eyebrow, .more-pieces .eyebrow,
 .fw-grid img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: top; display: block; border: 1px solid var(--line); }
 .fw-dl a { font-size: var(--t-label); letter-spacing: .12em; text-transform: uppercase; font-weight: 600; }
 @media (max-width: 640px) { .fw-grid { grid-template-columns: 1fr 1fr; } }
+.cs-src a { color: var(--muted); }
+.cs-refs { list-style: none; padding: 0; margin: 0 0 8px; display: flex; flex-wrap: wrap; gap: 6px 22px; }
+.cs-refs li, .cs-refs a { font-size: var(--t-small); color: var(--muted); }
+.cs-method p { font-size: var(--t-small); }
+/* VM on phones: photo above text, labels clear of the line */
+@media (max-width: 760px) {
+  .vm-page .vm-story, .no-label .vm-story { grid-template-columns: 1fr; gap: 14px; }
+  .vm-page .vm-story figure { max-width: 70%; }
+  .vm-page .vm-group { margin: 30px 0 0; }
+  .vm-page .vm-text, .vm-page .vm-story p { text-align: left; hyphens: manual; }
+}
+
+/* Journal list: one consistent card per entry */
+.jlist { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--text); }
+.jlist li { border-bottom: 1px solid var(--line); }
+.jlist a { display: flex; flex-direction: column; gap: 6px; padding: 24px 0; text-decoration: none; }
+.jdate, .jtags { font-size: var(--t-label); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.jtags { letter-spacing: .04em; text-transform: none; }
+.jtitle { font-size: var(--t-h2); font-weight: 600; letter-spacing: -.02em; line-height: 1.2; }
+.jexcerpt { font-size: var(--t-body); line-height: 1.6; color: #444; text-align: left; }
+.jlist a:hover .jtitle { text-decoration: underline; text-underline-offset: 4px; }
+.jlist li[hidden] { display: none; }
+.post p, .post li { text-align: left; hyphens: manual; }
+
+/* Asoo Design: bigger photos with a soft glow */
+.asoo { max-width: 1000px; }
+.asoo .collection-photos { grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.asoo .collection-photos .lead { grid-column: span 2; grid-row: span 2; }
+.asoo .collection-photos img, .asoo .collection-photos .lead img { aspect-ratio: 1 / 1; height: 100%; }
+.asoo .collection-photos figure:not(.lead):nth-child(n+6) { display: none; }
+.asoo .collection-photos img, .asoo .gallery img {
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.06), 0 14px 34px rgba(0,0,0,.12);
+  transition: transform .35s ease, box-shadow .35s ease, filter .35s ease;
+  filter: saturate(1.05);
+}
+.asoo .collection-photos img:hover, .asoo .gallery img:hover { transform: translateY(-3px) scale(1.015); box-shadow: 0 4px 10px rgba(0,0,0,.08), 0 22px 46px rgba(0,0,0,.16); filter: saturate(1.15) brightness(1.03); }
+.asoo .gallery.four { gap: 14px; }
+.asoo .collection-text p { max-width: 46em; }
+@media (prefers-reduced-motion: reduce) { .asoo img { transition: none; } }
+@media (max-width: 760px) { .asoo .collection-photos { grid-template-columns: 1fr 1fr; } .asoo .collection-photos .lead { grid-column: span 2; grid-row: auto; } }

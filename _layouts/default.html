@@ -33,7 +33,14 @@
                   <a href="{{ '/projects/competitor-study/' | relative_url }}">Competitor study</a>
                 </div>
               </div>
-              <a href="{{ '/projects/asoo-design/' | relative_url }}">Jewelry making</a>
+              <div class="sub-drop">
+                <a class="sub-toggle" href="{{ '/projects/' | relative_url }}#jewelry" aria-haspopup="true" aria-expanded="false">Design and craft <span class="chev" aria-hidden="true">›</span></a>
+                <div class="sub-menu">
+                  <a href="{{ '/projects/asoo-design/' | relative_url }}">Asoo Design</a>
+                  <a href="{{ '/projects/fabric-workbook/' | relative_url }}">Fabric workbook</a>
+                  <a href="{{ '/projects/daydreams/' | relative_url }}">Daydreams</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -61,8 +68,7 @@
     // "Retail projects" has its own list that opens only when you hover or tap it.
     (function () {
       var drop = document.querySelector('.nav-drop'), t = document.querySelector('.nav-drop > a'),
-          menu = document.querySelector('.drop-inner'), sub = document.querySelector('.sub-drop'),
-          st = document.querySelector('.sub-toggle');
+          menu = document.querySelector('.drop-inner'), sub = null;
       if (!drop || !t || !menu) return;
       var pointer = 'mouse', timer = null;
       document.addEventListener('pointerdown', function (e) { pointer = e.pointerType || 'mouse'; }, true);
@@ -70,9 +76,8 @@
       function place() { menu.style.setProperty('--drop-indent', t.getBoundingClientRect().left + 'px'); }
       function setDrop(on) {
         drop.classList.toggle('open', on); t.setAttribute('aria-expanded', on);
-        if (!on) setSub(false); else place();
+        if (!on) closeSubs(null); else place();
       }
-      function setSub(on) { if (sub) { sub.classList.toggle('open', on); st.setAttribute('aria-expanded', on); } }
       place(); window.addEventListener('resize', place);
 
       drop.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') { clearTimeout(timer); setDrop(true); } });
@@ -82,14 +87,17 @@
         e.preventDefault(); setDrop(!drop.classList.contains('open'));
       });
 
-      if (sub && st) {
-        sub.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') setSub(true); });
-        sub.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') setSub(false); });
-        st.addEventListener('click', function (e) {
-          if (pointer === 'mouse') return;        // mouse click: go to the retail projects
-          e.preventDefault(); setSub(!sub.classList.contains('open'));
+      var subs = Array.prototype.slice.call(document.querySelectorAll('.sub-drop'));
+      function closeSubs(except) { subs.forEach(function (d) { if (d !== except) { d.classList.remove('open'); d.querySelector('.sub-toggle').setAttribute('aria-expanded', 'false'); } }); }
+      subs.forEach(function (d) {
+        var tg = d.querySelector('.sub-toggle');
+        d.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') { closeSubs(d); d.classList.add('open'); } });
+        d.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') d.classList.remove('open'); });
+        tg.addEventListener('click', function (e) {
+          if (pointer === 'mouse') return;
+          e.preventDefault(); closeSubs(d); tg.setAttribute('aria-expanded', d.classList.toggle('open'));
         });
-      }
+      });
       document.addEventListener('click', function (e) { if (!drop.contains(e.target)) setDrop(false); });
       document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setDrop(false); });
     })();
