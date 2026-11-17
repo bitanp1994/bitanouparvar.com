@@ -6,9 +6,9 @@ permalink: /projects/fabric-workbook/
 
 <p class="eyebrow crumb"><a href="/projects/">Projects</a> / Design and craft · Mehrazi Fashion School · 2025</p>
 
-Over the past two months, I took a textile course at Mehrazi Fashion School in Tehran, taught by Masood Talari.
+In 2025, I spent two months in a textile course at Mehrazi Fashion School in Tehran, taught by Masood Talari.
 
-As someone just starting out in fashion, I've realized how powerful fabric knowledge can be alongside design skills. And honestly, growing up I always found fabric shops more exciting than amusement parks, so maybe this path was inevitable.
+Fabric decides how a garment fits, feels and lasts, so I wanted to understand it properly, not just by touch. And honestly, growing up I always found fabric shops more exciting than amusement parks, so maybe this path was inevitable.
 
 We looked at fabric from many different angles. The parts that stayed with me most:
 
