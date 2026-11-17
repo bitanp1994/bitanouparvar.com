@@ -719,3 +719,42 @@ main .eyebrow, .asoo .eyebrow, .collection-text .eyebrow, .more-pieces .eyebrow,
 .asoo .collection-text p { max-width: 46em; }
 @media (prefers-reduced-motion: reduce) { .asoo img { transition: none; } }
 @media (max-width: 760px) { .asoo .collection-photos { grid-template-columns: 1fr 1fr; } .asoo .collection-photos .lead { grid-column: span 2; grid-row: auto; } }
+
+/* ================= PROJECTS MENU (single panel, replaces the old nested dropdown) ================= */
+.nav-drop { position: relative; display: flex; }
+.nav-drop > a { padding: 6px 0; }
+.drop-menu, .nav-drop .drop-menu, .nav-drop.open .drop-menu {
+  display: block !important; position: absolute; top: 100%; left: 50%; right: auto; transform: translate(-50%, -6px);
+  padding: 22px 0 0; min-width: 0; z-index: 50;
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transition: opacity .18s ease, transform .18s ease, visibility 0s linear .18s;
+}
+.nav-drop.open .drop-menu { opacity: 1; visibility: visible; pointer-events: auto; transform: translate(-50%, 0); transition: opacity .18s ease, transform .18s ease, visibility 0s; }
+.drop-panel { background: var(--bg); border: 1px solid var(--line); box-shadow: 0 18px 40px rgba(0,0,0,.08); padding: 22px 26px 18px; display: grid; grid-template-columns: auto auto; gap: 4px 44px; width: max-content; }
+.drop-col { display: flex; flex-direction: column; }
+.drop-head { margin: 0 0 6px; font-size: var(--t-label); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+.drop-panel a { display: block; padding: 8px 0; font-size: var(--t-small) !important; letter-spacing: 0 !important; text-transform: none !important; color: var(--text) !important; text-decoration: none; white-space: nowrap; }
+.drop-panel a:hover, .drop-panel a:focus-visible { text-decoration: underline; text-underline-offset: 4px; }
+.drop-panel .drop-all { grid-column: 1 / -1; border-top: 1px solid var(--line); margin-top: 8px; padding-top: 12px; font-size: var(--t-label) !important; letter-spacing: .12em !important; text-transform: uppercase !important; }
+@media (prefers-reduced-motion: reduce) { .drop-menu, .nav-drop.open .drop-menu { transition: none; } }
+
+/* phones and small tablets: panel spans the full width under the header */
+@media (max-width: 820px) {
+  .site-header { position: relative; }
+  .nav-drop { position: static; }
+  .drop-menu, .nav-drop .drop-menu, .nav-drop.open .drop-menu { left: 0; right: 0; top: 100%; padding: 0; transform: translateY(-6px); }
+  .nav-drop.open .drop-menu { transform: none; }
+  .drop-panel { width: auto; border-left: 0; border-right: 0; grid-template-columns: 1fr 1fr; gap: 4px 20px; padding: 20px 24px 16px; }
+  .drop-panel a { padding: 11px 0; white-space: normal; }
+  .nav-drop > a { padding: 10px 0; }
+}
+
+/* every button and link easy to hit */
+nav a { padding: 6px 0; }
+.btn { min-height: 44px; display: inline-flex; align-items: center; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--text); outline-offset: 3px; }
+@media (hover: none), (max-width: 820px) { .drop-panel a { padding: 13px 0 !important; } }
+@media (hover: none), (max-width: 820px) { .drop-panel a { padding: 14px 0 !important; } .drop-panel .drop-all { padding-top: 15px !important; } }
+.page-foot { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; max-width: 1000px; margin: 64px auto 0; padding-top: 20px; border-top: 1px solid var(--line); }
+.page-foot a { font-size: var(--t-label); letter-spacing: .12em; text-transform: uppercase; font-weight: 600; text-decoration: none; padding: 10px 0; }
+.page-foot a:hover { text-decoration: underline; text-underline-offset: 5px; }

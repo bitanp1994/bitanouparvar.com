@@ -22,25 +22,22 @@
         <a href="{{ '/' | relative_url }}" {% if path == '/' %}class="active"{% endif %}>Home</a>
         <a href="{{ '/about/' | relative_url }}" {% if path contains '/about' %}class="active"{% endif %}>About</a>
         <div class="nav-drop">
-          <a href="{{ '/projects/' | relative_url }}" aria-haspopup="true" {% if path contains '/projects' %}class="active"{% endif %}>Projects</a>
-          <div class="drop-menu">
-            <div class="drop-inner">
-              <div class="sub-drop">
-                <a class="sub-toggle" href="{{ '/projects/' | relative_url }}#retail" aria-haspopup="true" aria-expanded="false">Retail projects <span class="chev" aria-hidden="true">›</span></a>
-                <div class="sub-menu">
-                  <a href="{{ '/projects/weekly-insights-report/' | relative_url }}">Weekly insights report</a>
-                  <a href="{{ '/projects/visual-merchandising/' | relative_url }}">Visual merchandising</a>
-                  <a href="{{ '/projects/competitor-study/' | relative_url }}">Competitor study</a>
-                </div>
+          <a href="{{ '/projects/' | relative_url }}" aria-haspopup="true" aria-expanded="false" aria-controls="projects-menu" {% if path contains '/projects' %}class="active"{% endif %}>Projects</a>
+          <div class="drop-menu" id="projects-menu">
+            <div class="drop-panel">
+              <div class="drop-col">
+                <p class="drop-head">Retail projects</p>
+                <a href="{{ '/projects/weekly-insights-report/' | relative_url }}">Weekly insights report</a>
+                <a href="{{ '/projects/visual-merchandising/' | relative_url }}">Visual merchandising</a>
+                <a href="{{ '/projects/competitor-study/' | relative_url }}">Competitor study</a>
               </div>
-              <div class="sub-drop">
-                <a class="sub-toggle" href="{{ '/projects/' | relative_url }}#jewelry" aria-haspopup="true" aria-expanded="false">Design and craft <span class="chev" aria-hidden="true">›</span></a>
-                <div class="sub-menu">
-                  <a href="{{ '/projects/asoo-design/' | relative_url }}">Asoo Design</a>
-                  <a href="{{ '/projects/fabric-workbook/' | relative_url }}">Fabric workbook</a>
-                  <a href="{{ '/projects/daydreams/' | relative_url }}">Daydreams</a>
-                </div>
+              <div class="drop-col">
+                <p class="drop-head">Design and craft</p>
+                <a href="{{ '/projects/asoo-design/' | relative_url }}">Asoo Design</a>
+                <a href="{{ '/projects/fabric-workbook/' | relative_url }}">Fabric workbook</a>
+                <a href="{{ '/projects/daydreams/' | relative_url }}">Daydreams</a>
               </div>
+              <a class="drop-all" href="{{ '/projects/' | relative_url }}">All projects →</a>
             </div>
           </div>
         </div>
@@ -52,6 +49,15 @@
 
   <main class="{% if page.full %}full{% else %}wrap{% if page.wide %} wide{% endif %}{% endif %}">
     {{ content }}
+    {% assign order = "weekly-insights-report|Weekly Insights Report,visual-merchandising|Visual Merchandising,competitor-study|Competitor Study,asoo-design|Asoo Design,fabric-workbook|Fabric Workbook,daydreams|Daydreams" | split: "," %}
+    {% if page.url contains '/projects/' and page.url != '/projects/' %}
+      {% for item in order %}{% assign parts = item | split: "|" %}{% assign u = '/projects/' | append: parts[0] | append: '/' %}{% if u == page.url %}{% assign idx = forloop.index0 %}{% endif %}{% endfor %}
+      {% assign nidx = idx | plus: 1 | modulo: order.size %}{% assign nparts = order[nidx] | split: "|" %}
+      <nav class="page-foot" aria-label="Project navigation">
+        <a href="{{ '/projects/' | relative_url }}">← All projects</a>
+        <a href="{{ '/projects/' | append: nparts[0] | append: '/' | relative_url }}">Next: {{ nparts[1] }} →</a>
+      </nav>
+    {% endif %}
   </main>
 
   <footer class="site-footer">
@@ -64,42 +70,23 @@
     </div>
   </footer>
   <script>
-    // Projects menu. Mouse: hover opens. Touch or pen: tap opens/closes (never jumps to a page).
-    // "Retail projects" has its own list that opens only when you hover or tap it.
+    // Projects menu: one panel, no nested lists.
+    // Mouse: opens on hover, stays open while moving into it, closes shortly after leaving.
+    // Touch: tap "Projects" to open or close; tap anywhere else to close.
     (function () {
-      var drop = document.querySelector('.nav-drop'), t = document.querySelector('.nav-drop > a'),
-          menu = document.querySelector('.drop-inner'), sub = null;
-      if (!drop || !t || !menu) return;
+      var drop = document.querySelector('.nav-drop'), t = drop && drop.querySelector(':scope > a');
+      if (!drop || !t) return;
       var pointer = 'mouse', timer = null;
       document.addEventListener('pointerdown', function (e) { pointer = e.pointerType || 'mouse'; }, true);
-
-      function place() { menu.style.setProperty('--drop-indent', t.getBoundingClientRect().left + 'px'); }
-      function setDrop(on) {
-        drop.classList.toggle('open', on); t.setAttribute('aria-expanded', on);
-        if (!on) closeSubs(null); else place();
-      }
-      place(); window.addEventListener('resize', place);
-
-      drop.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') { clearTimeout(timer); setDrop(true); } });
-      drop.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') { timer = setTimeout(function () { setDrop(false); }, 150); } });
-      t.addEventListener('click', function (e) {
-        if (pointer === 'mouse') return;          // mouse click: go to the Projects page
-        e.preventDefault(); setDrop(!drop.classList.contains('open'));
-      });
-
-      var subs = Array.prototype.slice.call(document.querySelectorAll('.sub-drop'));
-      function closeSubs(except) { subs.forEach(function (d) { if (d !== except) { d.classList.remove('open'); d.querySelector('.sub-toggle').setAttribute('aria-expanded', 'false'); } }); }
-      subs.forEach(function (d) {
-        var tg = d.querySelector('.sub-toggle');
-        d.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') { closeSubs(d); d.classList.add('open'); } });
-        d.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') d.classList.remove('open'); });
-        tg.addEventListener('click', function (e) {
-          if (pointer === 'mouse') return;
-          e.preventDefault(); closeSubs(d); tg.setAttribute('aria-expanded', d.classList.toggle('open'));
-        });
-      });
-      document.addEventListener('click', function (e) { if (!drop.contains(e.target)) setDrop(false); });
-      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setDrop(false); });
+      function set(on) { clearTimeout(timer); drop.classList.toggle('open', on); t.setAttribute('aria-expanded', on); }
+      drop.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') set(true); });
+      drop.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') { clearTimeout(timer); timer = setTimeout(function () { set(false); }, 300); } });
+      t.addEventListener('click', function (e) { if (pointer === 'mouse') return; e.preventDefault(); set(!drop.classList.contains('open')); });
+      t.addEventListener('keydown', function (e) { if (e.key === 'ArrowDown') { e.preventDefault(); set(true); var f = drop.querySelector('.drop-panel a'); if (f) f.focus(); } });
+      drop.addEventListener('focusout', function (e) { if (!drop.contains(e.relatedTarget)) set(false); });
+      document.addEventListener('click', function (e) { if (!drop.contains(e.target)) set(false); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { set(false); t.focus(); } });
+      window.addEventListener('pageshow', function () { set(false); });
     })();
   </script>
 </body>
