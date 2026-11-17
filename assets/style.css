@@ -578,3 +578,32 @@ main.wide .page:has(.intro-cols) { max-width: none; }
 .asoo .collection-photos { grid-template-columns: repeat(5, 1fr); gap: 8px; }
 .asoo .gallery.four { grid-template-columns: repeat(4, 1fr); max-width: none; gap: 8px; }
 @media (max-width: 760px) { .asoo .collection-photos { grid-template-columns: repeat(3, 1fr); } .asoo .gallery.four { grid-template-columns: repeat(2, 1fr); } }
+
+/* Competitor Study: styled like the PDF (sage cards, black accents) */
+.csx { max-width: 1000px; margin: 0 auto; --sage: #dfe3d9; }
+.csx .page { max-width: 760px; }
+.cs-sec { margin-top: 44px; }
+.cs-label { font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; margin: 0 0 16px; display: flex; align-items: center; gap: 8px; }
+.cs-label .sq { width: 8px; height: 8px; background: var(--text); display: inline-block; }
+.cs-sub { font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 22px 0 10px; }
+.cs-banner { background: #111; color: #fff; padding: 18px 22px; display: grid; grid-template-columns: 170px 1fr; gap: 20px; align-items: center; }
+.cs-banner p { margin: 0; color: #fff; font-size: .9rem; text-align: left; }
+.cs-brand { font-weight: 800; letter-spacing: .04em; font-size: 1.05rem; margin: 10px 0 0; text-align: left !important; }
+.cs-banner .cs-brand { font-size: 1.4rem; margin: 0; }
+.cs-grid { display: grid; gap: 14px; }
+.cs-grid.three { grid-template-columns: repeat(3, 1fr); }
+.cs-grid.four { grid-template-columns: repeat(4, 1fr); }
+.cs-card { background: var(--sage); border: 1px solid var(--text); padding: 16px; }
+.cs-card p { margin: 0; font-size: .84rem; line-height: 1.5; text-align: left; }
+.cs-num { display: inline-flex; width: 24px; height: 24px; border-radius: 50%; background: #111; color: #fff; font-size: .75rem; font-weight: 600; align-items: center; justify-content: center; }
+.cs-tag { font-weight: 600; margin: 2px 0 8px !important; color: #44483f; }
+.cs-intro { font-size: .92rem; margin: 0 0 6px; }
+.cs-radial-wrap { background: var(--sage); border: 1px solid var(--text); padding: 10px 0; }
+.alo-radial { display: block; width: 100%; max-width: 640px; margin: 0 auto; font-family: Inter, sans-serif; }
+.cs-method { font-size: .8rem; color: var(--muted); margin: 40px 0 0; max-width: 760px; }
+@media (max-width: 820px) {
+  .cs-grid.three, .cs-grid.four { grid-template-columns: 1fr 1fr; }
+  .cs-banner { grid-template-columns: 1fr; gap: 8px; }
+}
+@media (max-width: 520px) { .cs-grid.three, .cs-grid.four { grid-template-columns: 1fr; } }
+.alo-radial { max-width: 760px; }
