@@ -659,3 +659,17 @@ main .eyebrow, .asoo .eyebrow, .collection-text .eyebrow, .more-pieces .eyebrow,
 @media (max-width: 760px) { .dd-grid { grid-template-columns: 1fr 1fr; } }
 .dd-grid { max-width: none; margin: 32px 0 0; } .daydreams .lede { max-width: 34em; }
 .dd-grid { grid-template-columns: repeat(3, 1fr); } @media (max-width: 760px) { .dd-grid { grid-template-columns: 1fr 1fr; } }
+
+/* Daydreams: grouped by inspiration */
+.daydreams .lede { max-width: none; }
+.dd-sec { margin: 34px 0; padding-top: 20px; border-top: 1px solid var(--text); }
+.dd-text h2 { font-size: var(--t-h2); margin: 0 0 .4em; }
+.dd-text p { margin: 0 0 14px; }
+.dd-row { display: grid; gap: 10px; }
+.dd-row.four { grid-template-columns: repeat(4, 1fr); }
+.dd-row.three { grid-template-columns: repeat(3, 1fr); }
+.dd-row.two { grid-template-columns: repeat(2, 1fr); max-width: 50%; }
+.dd-row.one { grid-template-columns: 1fr; max-width: 25%; }
+.dd-row figure { margin: 0; }
+.dd-row img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; display: block; background: #f4f4f4; }
+@media (max-width: 760px) { .dd-row.four, .dd-row.three { grid-template-columns: 1fr 1fr; } .dd-row.two, .dd-row.one { max-width: none; } .dd-row.one { grid-template-columns: 1fr 1fr; } }
