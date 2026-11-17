@@ -24,4 +24,13 @@ We looked at fabric from many different angles. The parts that stayed with me mo
 
 The result is a personal swatch book of about 70 samples: my first dictionary of textiles.
 
+<div class="fw-grid">
+  <figure><img src="/assets/img/fabric/cover.jpg" alt="Cover of the Fabric Identification Workbook, Fabric Education Course by Masood Talari, Mehrazi Fashion Academy"></figure>
+  <figure><img src="/assets/img/fabric/samples-darks.jpg" alt="Workbook page with two denim swatches and handwritten notes on fibre, texture, shrinkage, durability, care and the burn test"></figure>
+  <figure><img src="/assets/img/fabric/samples-brights.jpg" alt="Workbook page with two blue textured swatches and handwritten identification notes"></figure>
+  <figure><img src="/assets/img/fabric/exercise.jpg" alt="Workbook exercise: choosing fabrics for a character's summer outfit"></figure>
+</div>
+
+<p class="fw-dl"><a href="/assets/Fabric_Identification_Workbook.pdf" target="_blank" rel="noopener">See the full workbook (PDF, 45 pages) →</a></p>
+
 Today, on the store floor, it changes how I talk about product. When a guest asks why one fabric feels the way it does, or why another one pills, I can actually answer.

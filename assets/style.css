@@ -673,3 +673,8 @@ main .eyebrow, .asoo .eyebrow, .collection-text .eyebrow, .more-pieces .eyebrow,
 .dd-row figure { margin: 0; }
 .dd-row img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; display: block; background: #f4f4f4; }
 @media (max-width: 760px) { .dd-row.four, .dd-row.three { grid-template-columns: 1fr 1fr; } .dd-row.two, .dd-row.one { max-width: none; } .dd-row.one { grid-template-columns: 1fr 1fr; } }
+.fw-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 28px 0 10px; }
+.fw-grid figure { margin: 0; }
+.fw-grid img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: top; display: block; border: 1px solid var(--line); }
+.fw-dl a { font-size: var(--t-label); letter-spacing: .12em; text-transform: uppercase; font-weight: 600; }
+@media (max-width: 640px) { .fw-grid { grid-template-columns: 1fr 1fr; } }
