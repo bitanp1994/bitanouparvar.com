@@ -777,3 +777,11 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--text); outline-
 .fw-grid img { aspect-ratio: 1 / 1; object-position: center; border: 0; border-radius: 6px; box-shadow: 0 6px 18px rgba(0,0,0,.08); }
 .fw-cover { display: block; max-width: 340px; margin: 28px 0 12px; }
 .fw-cover img { width: 100%; display: block; border: 1px solid var(--line); box-shadow: 0 6px 18px rgba(0,0,0,.08); }
+/* project tiles: always square, no text below */
+.proj-tile { overflow: hidden; }
+.proj-card { gap: 0; }
+@media (max-width: 640px) {
+  .proj-tile { padding: 16px; justify-content: center; }
+  .proj-tile .cs-word { font-size: 1.45rem; line-height: 1.1; }
+  .proj-tile .proj-stat-label { font-size: .6rem; letter-spacing: .1em; margin-top: 10px; }
+}

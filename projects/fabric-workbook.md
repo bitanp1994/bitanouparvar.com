@@ -25,7 +25,7 @@ We looked at fabric from many different angles. The parts that stayed with me mo
 
 The result is a personal swatch book of about 70 samples: my first dictionary of textiles.
 
-<a class="fw-cover" href="/assets/Fabric_Identification_Workbook.pdf" target="_blank" rel="noopener"><img src="/assets/img/fabric/cover.jpg" alt="Cover of the Fabric Identification Workbook: Fabric Education Course by Masood Talari, Mehrazi Fashion Academy"></a>
+<a class="fw-cover" href="/assets/Fabric_Identification_Workbook.pdf" target="_blank" rel="noopener"><img src="/assets/img/fabric/cover.jpg" alt="Fabric Identification Workbook, with sample collection and practical exercises"></a>
 
 <p class="fw-dl"><a href="/assets/Fabric_Identification_Workbook.pdf" target="_blank" rel="noopener">See the full workbook (PDF, 45 pages) →</a></p>
 
