@@ -2,9 +2,8 @@
 layout: page
 title: Fabric Identification Workbook
 permalink: /projects/fabric-workbook/
+crumb: Design and craft
 ---
-
-<p class="eyebrow crumb"><a href="/projects/">Projects</a> / Design and craft · Mehrazi Fashion School · 2025</p>
 
 In 2025, I spent two months in a textile course at Mehrazi Fashion School in Tehran, taught by Masood Talari.
 
@@ -27,10 +26,10 @@ We looked at fabric from many different angles. The parts that stayed with me mo
 The result is a personal swatch book of about 70 samples: my first dictionary of textiles.
 
 <div class="fw-grid">
-  <figure><img src="/assets/img/fabric/cover.jpg" alt="Cover of the Fabric Identification Workbook, Fabric Education Course by Masood Talari, Mehrazi Fashion Academy"></figure>
-  <figure><img src="/assets/img/fabric/samples-darks.jpg" alt="Workbook page with two denim swatches and handwritten notes on fibre, texture, shrinkage, durability, care and the burn test"></figure>
-  <figure><img src="/assets/img/fabric/samples-brights.jpg" alt="Workbook page with two blue textured swatches and handwritten identification notes"></figure>
-  <figure><img src="/assets/img/fabric/exercise.jpg" alt="Workbook exercise: choosing fabrics for a character's summer outfit"></figure>
+  <figure><img src="/assets/img/fabric/swatches-colour.jpg" alt="Nine fabric swatches from the workbook in red, orange, green, olive, turquoise crinkle, yellow, rust and lilac" loading="lazy"></figure>
+  <figure><img src="/assets/img/fabric/swatches-texture.jpg" alt="Nine textured fabric swatches: houndstooth, tweed, paisley print, sequins, plaid flannel, waffle knit, boucle, burlap and a floral print" loading="lazy"></figure>
+  <figure><img src="/assets/img/fabric/sample-page.jpg" alt="A workbook entry: a lilac polyester swatch with handwritten notes on texture, construction, shrinkage, durability, care and the burn test" loading="lazy"></figure>
+  <figure><img src="/assets/img/fabric/swatch-stack.jpg" alt="A stack of fabric swatches with pinked edges in teal, cream, yellow and brown" loading="lazy"></figure>
 </div>
 
 <p class="fw-dl"><a href="/assets/Fabric_Identification_Workbook.pdf" target="_blank" rel="noopener">See the full workbook (PDF, 45 pages) →</a></p>

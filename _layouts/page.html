@@ -2,6 +2,7 @@
 layout: default
 ---
 <article class="page">
+  {% if page.crumb %}<p class="eyebrow"><a href="{{ '/projects/' | relative_url }}">Projects</a> / {{ page.crumb }}</p>{% endif %}
   <h1>{{ page.title }}</h1>
   {% if page.intro %}<p class="lede">{{ page.intro }}</p>{% endif %}
   {{ content }}
