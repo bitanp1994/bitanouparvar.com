@@ -25,12 +25,7 @@ We looked at fabric from many different angles. The parts that stayed with me mo
 
 The result is a personal swatch book of about 70 samples: my first dictionary of textiles.
 
-<div class="fw-grid">
-  <figure><img src="/assets/img/fabric/swatches-colour.jpg" alt="Nine fabric swatches from the workbook in red, orange, green, olive, turquoise crinkle, yellow, rust and lilac" loading="lazy"></figure>
-  <figure><img src="/assets/img/fabric/swatches-texture.jpg" alt="Nine textured fabric swatches: houndstooth, tweed, paisley print, sequins, plaid flannel, waffle knit, boucle, burlap and a floral print" loading="lazy"></figure>
-  <figure><img src="/assets/img/fabric/sample-page.jpg" alt="A workbook entry: a lilac polyester swatch with handwritten notes on texture, construction, shrinkage, durability, care and the burn test" loading="lazy"></figure>
-  <figure><img src="/assets/img/fabric/swatch-stack.jpg" alt="A stack of fabric swatches with pinked edges in teal, cream, yellow and brown" loading="lazy"></figure>
-</div>
+<a class="fw-cover" href="/assets/Fabric_Identification_Workbook.pdf" target="_blank" rel="noopener"><img src="/assets/img/fabric/cover.jpg" alt="Cover of the Fabric Identification Workbook: Fabric Education Course by Masood Talari, Mehrazi Fashion Academy"></a>
 
 <p class="fw-dl"><a href="/assets/Fabric_Identification_Workbook.pdf" target="_blank" rel="noopener">See the full workbook (PDF, 45 pages) →</a></p>
 
