@@ -4,7 +4,7 @@
   --text: #111111;
   --muted: #767676;
   --line: #e5e5e5;
-  --sans: "Inter", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --sans: "Hanken Grotesk", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
 }
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
@@ -599,7 +599,7 @@ main.wide .page:has(.intro-cols) { max-width: none; }
 .cs-tag { font-weight: 600; margin: 2px 0 8px !important; color: #44483f; }
 .cs-intro { font-size: .92rem; margin: 0 0 6px; }
 .cs-radial-wrap { background: var(--sage); border: 1px solid var(--text); padding: 10px 0; }
-.alo-radial { display: block; width: 100%; max-width: 640px; margin: 0 auto; font-family: Inter, sans-serif; }
+.alo-radial { display: block; width: 100%; max-width: 640px; margin: 0 auto; font-family: "Hanken Grotesk", sans-serif; }
 .cs-method { font-size: .8rem; color: var(--muted); margin: 40px 0 0; max-width: 760px; }
 @media (max-width: 820px) {
   .cs-grid.three, .cs-grid.four { grid-template-columns: 1fr 1fr; }
@@ -789,3 +789,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--text); outline-
 .csx .cs-sec + .cs-sec { border-top: 1px solid var(--text); margin-top: 64px; padding-top: 32px; }
 .csx h2.cs-h { font-size: var(--t-h2); font-weight: 600; letter-spacing: -.01em; margin: 0 0 8px; text-transform: none; color: var(--text); line-height: 1.25; }
 .csx .cs-h + .cs-intro { margin-bottom: 20px; }
+/* type: Bodoni Moda for titles, Hanken Grotesk for text */
+:root { --serif: "Bodoni Moda", Didot, "Times New Roman", serif; }
+h1, .brand, .split-text h1, .csx h2.cs-h, .post h1 { font-family: var(--serif); font-weight: 400; letter-spacing: 0; }
+.brand { letter-spacing: .12em; }
+h1, .split-text h1, .home h1, main h1, .brand { font-family: var(--serif) !important; font-weight: 400 !important; }
