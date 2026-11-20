@@ -785,3 +785,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--text); outline-
   .proj-tile .cs-word { font-size: 1.45rem; line-height: 1.1; }
   .proj-tile .proj-stat-label { font-size: .6rem; letter-spacing: .1em; margin-top: 10px; }
 }
+/* competitor study: clear breaks between sections */
+.csx .cs-sec + .cs-sec { border-top: 1px solid var(--text); margin-top: 64px; padding-top: 32px; }
+.csx h2.cs-h { font-size: var(--t-h2); font-weight: 600; letter-spacing: -.01em; margin: 0 0 8px; text-transform: none; color: var(--text); line-height: 1.25; }
+.csx .cs-h + .cs-intro { margin-bottom: 20px; }
